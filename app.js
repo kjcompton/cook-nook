@@ -35,7 +35,9 @@ app.get('/recipes', (req, res) => {
     })
 })
 //NEW
-
+app.get('/recipes/new', (req, res) => {
+    res.render('new.ejs')
+})
 //DELETE
 
 //UPDATE
