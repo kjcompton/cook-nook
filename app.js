@@ -43,7 +43,15 @@ app.get('/recipes/new', (req, res) => {
 //UPDATE
 
 //CREATE
-
+app.post('/recipes', (req, res) => {
+    Recipe.create(req.body, (err, createdRecipe) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.redirect('/recipes')
+        }
+    })
+})
 //EDIT
 
 //SHOW
