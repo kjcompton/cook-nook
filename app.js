@@ -28,7 +28,9 @@ app.get('/recipes', (req, res) => {
         if (err) {
             console.log(err)
         } else {
-            res.send(allRecipes)
+            res.render('index.ejs', {
+                recipes: allRecipes
+            })
         }
     })
 })
