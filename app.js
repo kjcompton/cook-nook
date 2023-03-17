@@ -50,7 +50,15 @@ app.delete('/recipes/:id', (req, res) => {
     })
 })
 //UPDATE
-
+app.put('/recipes/:id', (req, res) => {
+    Recipe.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updatedRecipe) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.redirect('/recipes')
+        }
+    })
+})
 //CREATE
 app.post('/recipes', (req, res) => {
     Recipe.create(req.body, (err, createdRecipe) => {
@@ -62,7 +70,17 @@ app.post('/recipes', (req, res) => {
     })
 })
 //EDIT
-
+app.get('/recipes/:id/edit', (req, res) => {
+    Recipe.findById(req.params.id, (err, foundRecipe) => {
+        if (err) {
+            console.log(err) 
+        } else {
+            res.render('edit.ejs', {
+                recipe: foundRecipe
+            })
+        }
+    })
+})
 //SHOW
 
 //SEED

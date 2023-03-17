@@ -9,6 +9,7 @@
     <ul>
         <% for (i = 0; i < recipes.length; i++) { %>
             <li><%= recipes[i].name %></li>
+            <a href="/recipes/<%= recipes[i].id %>/edit">Edit</a>
             <form action="/recipes/<%= recipes[i].id %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete">
             </form>
