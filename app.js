@@ -28,7 +28,7 @@ app.use(express.static('public'));
 
 //HOME
 app.get('/', (req, res) => {
-    res.send('Home')
+    res.send('Hello World!')
 })
 
 app.use('/recipes', recipesController)
