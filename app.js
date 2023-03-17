@@ -82,7 +82,17 @@ app.get('/recipes/:id/edit', (req, res) => {
     })
 })
 //SHOW
-
+app.get('/recipes/:id', (req, res) => {
+    Recipe.findById(req.params.id, (err, foundRecipe) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.render('show.ejs', {
+                recipe: foundRecipe
+            })
+        }
+    })
+})
 //SEED
 const recipeSeed = [
     {
