@@ -35,6 +35,26 @@ router.delete('/:id', (req, res) => {
 
 //UPDATE
 router.put('/:id', (req, res) => {
+    if (req.body.one_pot === 'on') {
+        req.body.one_pot = true
+    } else {
+        req.body.one_pot = false
+    }
+    if (req.body.sheet_pan === 'on') {
+        req.body.sheet_pan = true
+    } else {
+        req.body.sheet_pan = false
+    }
+    if (req.body.quick_and_easy === 'on') {
+        req.body.quick_and_easy = true
+    } else {
+        req.body.quick_and_easy = false
+    }
+    if (req.body.limited_ingredients === 'on') {
+        req.body.limited_ingredients = true
+    } else {
+        req.body.limited_ingredients = false
+    }
     Recipe.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updatedRecipe) => {
         if (err) {
             console.log(err)
@@ -46,6 +66,26 @@ router.put('/:id', (req, res) => {
 
 //CREATE
 router.post('/', (req, res) => {
+    if (req.body.one_pot === 'on') {
+        req.body.one_pot = true
+    } else {
+        req.body.one_pot = false
+    }
+    if (req.body.sheet_pan === 'on') {
+        req.body.sheet_pan = true
+    } else {
+        req.body.sheet_pan = false
+    }
+    if (req.body.quick_and_easy === 'on') {
+        req.body.quick_and_easy = true
+    } else {
+        req.body.quick_and_easy = false
+    }
+    if (req.body.limited_ingredients === 'on') {
+        req.body.limited_ingredients = true
+    } else {
+        req.body.limited_ingredients = false
+    }
     Recipe.create(req.body, (err, createdRecipe) => {
         if (err) {
             console.log(err)
@@ -81,12 +121,12 @@ router.get('/:id', (req, res) => {
     })
 })
 
-    Recipe.create(recipeSeed, (err, data) => {
-    if (err) { 
-        console.log(err.message)
-    } else {
-        console.log('Added recipes')
-    }
-    })
+    // Recipe.create(recipeSeed, (err, data) => {
+    // if (err) { 
+    //     console.log(err.message)
+    // } else {
+    //     console.log('Added recipes')
+    // }
+    // })
 
 module.exports = router
