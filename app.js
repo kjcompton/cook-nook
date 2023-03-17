@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 require('dotenv').config()
+
 const PORT = process.env.PORT
 const mongoose = require('mongoose')
 const db = mongoose.connection
@@ -39,7 +40,15 @@ app.get('/recipes/new', (req, res) => {
     res.render('new.ejs')
 })
 //DELETE
-
+app.delete('/recipes/:id', (req, res) => {
+    Recipe.findByIdAndDelete(req.params.id, (err, deletedRecipe) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.redirect('/recipes')
+        }
+    })
+})
 //UPDATE
 
 //CREATE
