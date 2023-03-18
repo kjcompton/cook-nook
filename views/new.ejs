@@ -1,170 +1,530 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include('./partials/header.ejs') %>
 <body>
     <form action="/recipes" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+        <nav class="navbar is-fixed-top py-3" role="navigation" aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-start">
+                    <h1 class="title is-2">New Recipe</h1>
+                </div>
+                <div class="navbar-end">
+                 <input input class="button" type="submit" value="Add Recipe">
+                </div>
+            </div>
+        </nav>
+        <div class="container py-5" style="margin-top: 100px;">
+            <div class="field">
+                <label class="label" class="label" for="name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" id="name">
+                </div>
+            </div>
 
-        <label for="description">Description</label>
-        <textarea name="description" id="description" rows="5"></textarea>
+            <label class="label" for="description">Description</label>
+            <textarea class="textarea" name="description" id="description" rows="5"></textarea>
 
-        <h2>Course</h2>
-        <input type="radio" name="course" id="breakfast" value="Breakfast">
-        <label for="breakfast">Breakfast</label>
-        <input type="radio" name="course" id="lunch" value="Lunch">
-        <label for="lunch">Lunch</label>
-        <input type="radio" name="course" id="dinner" value="Dinner">
-        <label for="dinner">Dinner</label>
-        <input type="radio" name="course" id="snack" value="Snack">
-        <label for="snack">Snack</label>
 
-        <label for="one_pot">One Pot</label>
-        <input type="checkbox" name="one_pot" id="one_pot">
-        <label for="sheet_pan">Sheet Pan</label>
-        <input type="checkbox" name="sheet_pan" id="sheet_pan">
-        <label for="quick_and_easy">Quick and Easy</label>
-        <input type="checkbox" name="quick_and_easy" id="quick_and_easy">
-        <label for="limited_ingredients">Limited Ingredients</label>
-        <input type="checkbox" name="limited_ingredients" id="limited_ingredients">
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="breakfast">
+                        <input type="checkbox" name="course" id="breakfast">
+                        Breakfast
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="lunch">
+                        <input type="checkbox" name="course" id="lunch">
+                        Lunch
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="dinner">
+                        <input type="checkbox" name="course" id="dinner">
+                        Dinner
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="snack">
+                        <input type="checkbox" name="course" id="snack">
+                        Snack
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="one_pot">
+                        <input type="checkbox" name="one_pot" id="one_pot">
+                        One Pot
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="sheet_pan">
+                        <input type="checkbox" name="sheet_pan" id="sheet_pan">
+                        Sheet Pan
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="quick_and_easy">
+                        <input type="checkbox" name="quick_and_easy" id="quick_and_easy">
+                        Quick and Easy
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox" for="limited_ingredients">
+                        <input type="checkbox" name="limited_ingredients" id="limited_ingredients">
+                        Limited Ingredients
+                    </label>
+                </div>
+            </div>
+            
+            <div class="field">
+                <div class="control">
+                    <label class="label" id="prep_time">Prep Time</label>
+                    <input class="input" type="number" name="prep_time" id="prep_time" min="1">Minutes
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label" id="cook_time">Cook Time</label>
+                    <input class="input" type="number" name="cook_time" id="cook_time" min="1">Minutes
+                </div>
+            </div>
 
-        <label id="prep_time">Prep Time</label>
-        <input type="number" name="prep_time" id="prep_time" min="1">Minutes
-        <label id="cook_time">Cook Time</label>
-        <input type="number" name="cook_time" id="cook_time" min="1">Minutes
+            <h1 class="title is-4">Ingredient 1</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_1">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_1" id="ingredient_1" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_1">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_1" id="ingredient_quantity_1" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_1">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_1" id="ingredient_unit_of_measurement_1" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 2</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_2">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_2" id="ingredient_2" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_2">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_2" id="ingredient_quantity_2" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_2">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_2" id="ingredient_unit_of_measurement_2" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 3</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_3">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_3" id="ingredient_3" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_3">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_3" id="ingredient_quantity_3" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_3">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_3" id="ingredient_unit_of_measurement_3" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 4</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_4">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_4" id="ingredient_4" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_4">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_4" id="ingredient_quantity_4" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_4">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_4" id="ingredient_unit_of_measurement_4" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 5</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_5">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_5" id="ingredient_5" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_5">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_5" id="ingredient_quantity_5" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_5">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_5" id="ingredient_unit_of_measurement_5" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 6</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_6">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_6" id="ingredient_6" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_6">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_6" id="ingredient_quantity_6" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_6">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_6" id="ingredient_unit_of_measurement_6" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 7</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_7">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_7" id="ingredient_7" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_7">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_7" id="ingredient_quantity_7" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_7">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_7" id="ingredient_unit_of_measurement_7" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 8</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_8">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_8" id="ingredient_8" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_8">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_8" id="ingredient_quantity_8" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_8">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_8" id="ingredient_unit_of_measurement_8" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 9</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_9">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_9" id="ingredient_9" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_9">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_9" id="ingredient_quantity_9" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_9">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_9" id="ingredient_unit_of_measurement_9" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title is-4">Ingredient 10</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_10">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_10" id="ingredient_10" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_quantity_10">Quantity</label>
+                        <div class="control">
+                            <input class="input" type="number" name="ingredient_quantity_10" id="ingredient_quantity_10" >
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label" for="ingredient_unit_of_measurement_10">Measurement</label>
+                        <div class="control">
+                            <input class="input" type="text" name="ingredient_unit_of_measurement_10" id="ingredient_unit_of_measurement_10" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 
-        <h1>Ingredient 1</h1>
-        <label for="ingredient_1">Ingredient</label>
-        <input type="text" name="ingredient_1" id="ingredient_1" >
-        <label for="ingredient_quantity_1">Ingredient Quantity</label>
-        <input type="number" name="ingredient_quantity_1" id="ingredient_quantity_1" >
-        <label for="ingredient_unit_of_measurement_1">Ingredient Measurement</label>
-        <input type="text" name="ingredient_unit_of_measurement_1" id="ingredient_unit_of_measurement_1" >
+            
 
-        <h1>Ingredient 2</h1>
-        <label for="ingredient_2">Ingredient</label>
-        <input type="text" name="ingredient_2" id="ingredient_2">
-        <label for="ingredient_2_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_2_quantity" id="ingredient_2_quantity">
-        <label for="ingredient_2_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_2_unit_of_measurement" id="ingredient_2_unit_of_measurement">
-        <h1>Ingredient 3</h1>
-        <label for="ingredient_3">Ingredient</label>
-        <input type="text" name="ingredient_3" id="ingredient_3">
-        <label for="ingredient_3_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_3_quantity" id="ingredient_3_quantity">
-        <label for="ingredient_3_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_3_unit_of_measurement" id="ingredient_3_unit_of_measurement">
-        <h1>Ingredient 4</h1>
-        <label for="ingredient_4">Ingredient</label>
-        <input type="text" name="ingredient_4" id="ingredient_4">
-        <label for="ingredient_4_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_4_quantity" id="ingredient_4_quantity">
-        <label for="ingredient_4_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_4_unit_of_measurement" id="ingredient_4_unit_of_measurement">
-        <h1>Ingredient 5</h1>
-        <label for="ingredient_5">Ingredient</label>
-        <input type="text" name="ingredient_5" id="ingredient_5">
-        <label for="ingredient_5_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_5_quantity" id="ingredient_5_quantity">
-        <label for="ingredient_5_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_5_unit_of_measurement" id="ingredient_5_unit_of_measurement">
-        <h1>Ingredient 6</h1>
-        <label for="ingredient_6">Ingredient</label>
-        <input type="text" name="ingredient_6" id="ingredient_6">
-        <label for="ingredient_6_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_6_quantity" id="ingredient_6_quantity">
-        <label for="ingredient_6_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_6_unit_of_measurement" id="ingredient_6_unit_of_measurement">
-        <h1>Ingredient 7</h1>
-        <label for="ingredient_7">Ingredient</label>
-        <input type="text" name="ingredient_7" id="ingredient_7">
-        <label for="ingredient_7_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_7_quantity" id="ingredient_7_quantity">
-        <label for="ingredient_7_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_7_unit_of_measurement" id="ingredient_7_unit_of_measurement">
-        <h1>Ingredient 8</h1>
-        <label for="ingredient_8">Ingredient</label>
-        <input type="text" name="ingredient_8" id="ingredient_8">
-        <label for="ingredient_8_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_8_quantity" id="ingredient_8_quantity">
-        <label for="ingredient_8_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_8_unit_of_measurement" id="ingredient_8_unit_of_measurement">
-        <h1>Ingredient 9</h1>
-        <label for="ingredient_9">Ingredient</label>
-        <input type="text" name="ingredient_9" id="ingredient_9">
-        <label for="ingredient_9_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_9_quantity" id="ingredient_9_quantity">
-        <label for="ingredient_9_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_9_unit_of_measurement" id="ingredient_9_unit_of_measurement">
-        <h1>Ingredient 10</h1>
-        <label for="ingredient_10">Ingredient</label>
-        <input type="text" name="ingredient_10" id="ingredient_10">
-        <label for="ingredient_10_quantity">Ingredient Quantity</label>
-        <input type="number" name="ingredient_10_quantity" id="ingredient_10_quantity">
-        <label for="ingredient_10_unit_of_measurement">Ingredient Measurement</label>
-        <input type="text" name="ingredient_10_unit_of_measurement" id="ingredient_10_unit_of_measurement">
+            <h1 class="title is-4">Instruction 1</h1>
+            <div class="field">
+                <label class="label" for="instruction_1_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_1_name" id="instruction_1_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_1_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_1_description" id="instruction_1_description"></textarea>
+                </div>
+            </div>
 
-        <h1>Instruction 1</h1>
-        <label for="instruction_1_name">Name</label>
-        <input type="text" name="instruction_1_name" id="instruction_1_name">
-        <label for="instruction_1_description">Description</label>
-        <textarea name="instruction_1_description" id="instruction_1_description"></textarea>
-        <h1>Instruction 2</h1>
-        <label for="instruction_2_name">Name</label>
-        <input type="text" name="instruction_2_name" id="instruction_2_name">
-        <label for="instruction_2_description">Description</label>
-        <textarea name="instruction_2_description" id="instruction_2_description"></textarea>
-        <h1>Instruction 3</h1>
-        <label for="instruction_3_name">Name</label>
-        <input type="text" name="instruction_3_name" id="instruction_3_name">
-        <label for="instruction_3_description">Description</label>
-        <textarea name="instruction_3_description" id="instruction_3_description"></textarea>
-        <h1>Instruction 4</h1>
-        <label for="instruction_4_name">Name</label>
-        <input type="text" name="instruction_4_name" id="instruction_4_name">
-        <label for="instruction_4_description">Description</label>
-        <textarea name="instruction_4_description" id="instruction_4_description"></textarea>
-        <h1>Instruction 5</h1>
-        <label for="instruction_5_name">Name</label>
-        <input type="text" name="instruction_5_name" id="instruction_5_name">
-        <label for="instruction_5_description">Description</label>
-        <textarea name="instruction_5_description" id="instruction_5_description"></textarea>
-        <h1>Instruction 6</h1>
-        <label for="instruction_6_name">Name</label>
-        <input type="text" name="instruction_6_name" id="instruction_6_name">
-        <label for="instruction_6_description">Description</label>
-        <textarea name="instruction_6_description" id="instruction_6_description"></textarea>
-        <h1>Instruction 7</h1>
-        <label for="instruction_7_name">Name</label>
-        <input type="text" name="instruction_7_name" id="instruction_7_name">
-        <label for="instruction_7_description">Description</label>
-        <textarea name="instruction_7_description" id="instruction_7_description"></textarea>
-        <h1>Instruction 8</h1>
-        <label for="instruction_8_name">Name</label>
-        <input type="text" name="instruction_8_name" id="instruction_8_name">
-        <label for="instruction_8_description">Description</label>
-        <textarea name="instruction_8_description" id="instruction_8_description"></textarea>
-        <h1>Instruction 9</h1>
-        <label for="instruction_9_name">Name</label>
-        <input type="text" name="instruction_9_name" id="instruction_9_name">
-        <label for="instruction_9_description">Description</label>
-        <textarea name="instruction_9_description" id="instruction_9_description"></textarea>
-        <h1>Instruction 10</h1>
-        <label for="instruction_10_name">Name</label>
-        <input type="text" name="instruction_10_name" id="instruction_10_name">
-        <label for="instruction_10_description">Description</label>
-        <textarea name="instruction_10_description" id="instruction_10_description"></textarea>
+            <h1 class="title is-4">Instruction 2</h1>
+            <div class="field">
+                <label class="label" for="instruction_2_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_2_name" id="instruction_2_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_2_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_2_description" id="instruction_2_description"></textarea>
+                </div>
+            </div>
 
-        <label for="notes">Notes</label>
-        <textarea name="notes" id="notes"></textarea>
+            <h1 class="title is-4">Instruction 3</h1>
+            <div class="field">
+                <label class="label" for="instruction_3_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_3_name" id="instruction_3_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_3_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_3_description" id="instruction_3_description"></textarea>
+                </div>
+            </div>
 
-        <input type="submit" value="Add Recipe">
+            <h1 class="title is-4">Instruction 4</h1>
+            <div class="field">
+                <label class="label" for="instruction_4_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_4_name" id="instruction_4_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_4_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_4_description" id="instruction_4_description"></textarea>
+                </div>
+            </div>
+
+            <h1 class="title is-4">Instruction 5</h1>
+            <div class="field">
+                <label class="label" for="instruction_5_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_5_name" id="instruction_5_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_5_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_5_description" id="instruction_5_description"></textarea>
+                </div>
+            </div>
+
+            <h1 class="title is-4">Instruction 6</h1>
+            <div class="field">
+                <label class="label" for="instruction_6_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_6_name" id="instruction_6_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_6_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_6_description" id="instruction_6_description"></textarea>
+                </div>
+            </div>
+
+            <h1 class="title is-4">Instruction 7</h1>
+            <div class="field">
+                <label class="label" for="instruction_7_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_7_name" id="instruction_7_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_7_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_7_description" id="instruction_7_description"></textarea>
+                </div>
+            </div>
+
+            <h1 class="title is-4">Instruction 8</h1>
+            <div class="field">
+                <label class="label" for="instruction_8_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_8_name" id="instruction_8_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_8_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_8_description" id="instruction_8_description"></textarea>
+                </div>
+            </div>
+
+            <h1 class="title is-4">Instruction 9</h1>
+            <div class="field">
+                <label class="label" for="instruction_9_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_9_name" id="instruction_9_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_9_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_9_description" id="instruction_9_description"></textarea>
+                </div>
+            </div>
+
+            <h1 class="title is-4">Instruction 10</h1>
+            <div class="field">
+                <label class="label" for="instruction_10_name">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="instruction_10_name" id="instruction_10_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="instruction_10_description">Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="instruction_10_description" id="instruction_10_description"></textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="notes">Notes</label>
+                <div class="control">
+                    <textarea class="textarea" name="notes" id="notes"></textarea>
+                </div>
+            </div>
+            
+            
+
+            <input input class="button" type="submit" value="Add Recipe">
+        </div>
     </form>
-</body>
-</html>
+<%- include('./partials/footer.ejs') %>

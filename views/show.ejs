@@ -1,12 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<%- include('./partials/header.ejs') %>
     <h1><%= recipe.name %></h1>
-</body>
-</html>
+    <%= recipe.description %>
+
+    <%= recipe.course %>
+    <%= recipe.one_pot %>
+    <%= recipe.sheet_pan %>
+    <%= recipe.quick_and_easy %>
+    <%= recipe.limited_ingredients %>
+
+    <%= recipe.prep_time %>
+    <%= recipe.cook_time %>
+
+    <%= recipe.ingredient_1 %>
+    <%= recipe.ingredient_1_quantity %>
+    <%= recipe.ingredient_1_measurement %>
+
+    <%= recipe.ingredient_1 %>
+    <%= recipe.ingredient_1_quantity %>
+    <%= recipe.ingredient_1_measurement %>
+    <%= recipe.ingredient_2 %>
+    <%= recipe.ingredient_2_quantity %>
+    <%= recipe.ingredient_2_measurement %>
+    <%= recipe.ingredient_3 %>
+    <%= recipe.ingredient_3_quantity %>
+    <%= recipe.ingredient_3_measurement %>
+    <%= recipe.ingredient_4 %>
+    <%= recipe.ingredient_4_quantity %>
+    <%= recipe.ingredient_4_measurement %>
+    <%= recipe.ingredient_5 %>
+    <%= recipe.ingredient_5_quantity %>
+    <%= recipe.ingredient_5_measurement %>
+    <%= recipe.ingredient_6 %>
+    <%= recipe.ingredient_6_quantity %>
+    <%= recipe.ingredient_6_measurement %>
+    <%= recipe.ingredient_7 %>
+    <%= recipe.ingredient_7_quantity %>
+    <%= recipe.ingredient_7_measurement %>
+    <%= recipe.ingredient_8 %>
+    <%= recipe.ingredient_8_quantity %>
+    <%= recipe.ingredient_8_measurement %>
+    <%= recipe.ingredient_9 %>
+    <%= recipe.ingredient_9_quantity %>
+    <%= recipe.ingredient_9_measurement %>
+    <%= recipe.ingredient_10 %>
+    <%= recipe.ingredient_10_quantity %>
+    <%= recipe.ingredient_10_measurement %>
+
+    <%= recipe.instruction_1_name %>
+    <%= recipe.instruction_1_description %>
+    <%= recipe.instruction_2_name %>
+    <%= recipe.instruction_2_description %>
+    <%= recipe.instruction_3_name %>
+    <%= recipe.instruction_3_description %>
+    <%= recipe.instruction_4_name %>
+    <%= recipe.instruction_4_description %>
+    <%= recipe.instruction_5_name %>
+    <%= recipe.instruction_5_description %>
+    <%= recipe.instruction_6_name %>
+    <%= recipe.instruction_6_description %>
+    <%= recipe.instruction_7_name %>
+    <%= recipe.instruction_7_description %>
+    <%= recipe.instruction_8_name %>
+    <%= recipe.instruction_8_description %>
+    <%= recipe.instruction_9_name %>
+    <%= recipe.instruction_9_description %>
+    <%= recipe.instruction_10_name %>
+    <%= recipe.instruction_10_description %>
+
+    <%= recipe.notes %>
+<%- include('./partials/footer.ejs') %>
