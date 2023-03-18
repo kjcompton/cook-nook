@@ -1,15 +1,24 @@
 <%- include('./partials/header.ejs') %>
-    <a href="/recipes/new">Add Recipe</a>
-    <ul>
-        <% for (i = 0; i < recipes.length; i++) { %>
-            <li><a href="/recipes/<%= recipes[i].id %>"><%= recipes[i].name %></a></li>
-            
-            <a href="/recipes/<%= recipes[i].id %>/edit">Edit</a>
-
-            <form action="/recipes/<%= recipes[i].id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete">
-            </form>
-        <% } %>
-    </ul>
+    
+    <div class="container">
+        <div class="columns is-multiline">
+            <% for (i = 0; i < recipes.length; i++) { %>
+                <div class="column is-one-third">
+                    <a href="/recipes/<%= recipes[i].id %>" >
+                    <div class="card">
+                        <header class="card-header p-2">
+                            <h1 class="title is-3"><%= recipes[i].name %></h1>
+                        </header>
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="<%= recipes[i].image %>" alt="<%= recipes[i].name %> image">
+                                </figure>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+    </div>
     
 <%- include('./partials/footer.ejs') %>

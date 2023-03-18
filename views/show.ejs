@@ -1,71 +1,147 @@
 <%- include('./partials/header.ejs') %>
-    <h1><%= recipe.name %></h1>
-    <%= recipe.description %>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-three-fifths">
+                <div class="box">
+                    <h1 class="title is-2"><%= recipe.name %></h1>
+                    <p class="mb-3"><%= recipe.description %></p>
+                    <div class="tags are-medium mb-3">
+                        <span class="tag is-dark"><%= recipe.course %></span>
+                        <% if (recipe.one_pot === true) { %>
+                            <span class="tag is-dark">One Pot</span>
+                        <% } %>
+                        <% if (recipe.sheet_pan === true) { %>
+                            <span class="tag is-dark">Sheet Pan</span>
+                        <% } %>
+                        <% if (recipe.quick_and_easy === true) { %>
+                            <span class="tag is-dark">Quick and Easy</span>
+                        <% } %>
+                        <% if (recipe.limited_ingredients === true) { %>
+                            <span class="tag is-dark">Limited Ingredients</span>
+                        <% } %>
+                    </div>
+                    <div class="tags are-medium">
+                        <span class="tag">Prep Time: <%= recipe.prep_time %> min</span>
+                        <span class="tag">Cook Time: <%= recipe.cook_time %> min</span>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <img src="<%= recipe.image %>" alt="<%= recipe.name %> image">
+            </div>
+            
 
-    <%= recipe.course %>
-    <%= recipe.one_pot %>
-    <%= recipe.sheet_pan %>
-    <%= recipe.quick_and_easy %>
-    <%= recipe.limited_ingredients %>
-
-    <%= recipe.prep_time %>
-    <%= recipe.cook_time %>
-
-    <%= recipe.ingredient_1 %>
-    <%= recipe.ingredient_1_quantity %>
-    <%= recipe.ingredient_1_measurement %>
-
-    <%= recipe.ingredient_1 %>
-    <%= recipe.ingredient_1_quantity %>
-    <%= recipe.ingredient_1_measurement %>
-    <%= recipe.ingredient_2 %>
-    <%= recipe.ingredient_2_quantity %>
-    <%= recipe.ingredient_2_measurement %>
-    <%= recipe.ingredient_3 %>
-    <%= recipe.ingredient_3_quantity %>
-    <%= recipe.ingredient_3_measurement %>
-    <%= recipe.ingredient_4 %>
-    <%= recipe.ingredient_4_quantity %>
-    <%= recipe.ingredient_4_measurement %>
-    <%= recipe.ingredient_5 %>
-    <%= recipe.ingredient_5_quantity %>
-    <%= recipe.ingredient_5_measurement %>
-    <%= recipe.ingredient_6 %>
-    <%= recipe.ingredient_6_quantity %>
-    <%= recipe.ingredient_6_measurement %>
-    <%= recipe.ingredient_7 %>
-    <%= recipe.ingredient_7_quantity %>
-    <%= recipe.ingredient_7_measurement %>
-    <%= recipe.ingredient_8 %>
-    <%= recipe.ingredient_8_quantity %>
-    <%= recipe.ingredient_8_measurement %>
-    <%= recipe.ingredient_9 %>
-    <%= recipe.ingredient_9_quantity %>
-    <%= recipe.ingredient_9_measurement %>
-    <%= recipe.ingredient_10 %>
-    <%= recipe.ingredient_10_quantity %>
-    <%= recipe.ingredient_10_measurement %>
-
-    <%= recipe.instruction_1_name %>
-    <%= recipe.instruction_1_description %>
-    <%= recipe.instruction_2_name %>
-    <%= recipe.instruction_2_description %>
-    <%= recipe.instruction_3_name %>
-    <%= recipe.instruction_3_description %>
-    <%= recipe.instruction_4_name %>
-    <%= recipe.instruction_4_description %>
-    <%= recipe.instruction_5_name %>
-    <%= recipe.instruction_5_description %>
-    <%= recipe.instruction_6_name %>
-    <%= recipe.instruction_6_description %>
-    <%= recipe.instruction_7_name %>
-    <%= recipe.instruction_7_description %>
-    <%= recipe.instruction_8_name %>
-    <%= recipe.instruction_8_description %>
-    <%= recipe.instruction_9_name %>
-    <%= recipe.instruction_9_description %>
-    <%= recipe.instruction_10_name %>
-    <%= recipe.instruction_10_description %>
-
-    <%= recipe.notes %>
+        </div>
+        <div class="content is-medium py-4">
+            <h1 class="title is-1">Ingredients</h1>
+            <% if(recipe.ingredient_1) { %>
+                <p><strong>1. </strong><%= recipe.ingredient_1_quantity %> <%= recipe.ingredient_1_measurement %>  <%= recipe.ingredient_1 %></p>
+            <% } %>
+            <% if(recipe.ingredient_2) { %>
+                <p><strong>2. </strong><%= recipe.ingredient_2_quantity %> <%= recipe.ingredient_2_measurement %>  <%= recipe.ingredient_2 %></p>
+            <% } %>
+            <% if(recipe.ingredient_3) { %>
+                <p><strong>3. </strong><%= recipe.ingredient_3_quantity %> <%= recipe.ingredient_3_measurement %>  <%= recipe.ingredient_3 %></p>
+            <% } %>
+            <% if(recipe.ingredient_4) { %>
+                <p><strong>4. </strong><%= recipe.ingredient_4_quantity %> <%= recipe.ingredient_4_measurement %>  <%= recipe.ingredient_4 %></p>
+            <% } %>
+            <% if(recipe.ingredient_5) { %>
+                <p><strong>5. </strong><%= recipe.ingredient_5_quantity %> <%= recipe.ingredient_5_measurement %>  <%= recipe.ingredient_5 %></p>
+            <% } %>
+            <% if(recipe.ingredient_6) { %>
+                <p><strong>6. </strong><%= recipe.ingredient_6_quantity %> <%= recipe.ingredient_6_measurement %>  <%= recipe.ingredient_6 %></p>
+            <% } %>
+            <% if(recipe.ingredient_7) { %>
+                <p><strong>7. </strong><%= recipe.ingredient_7_quantity %> <%= recipe.ingredient_7_measurement %>  <%= recipe.ingredient_7 %></p>
+            <% } %>
+            <% if(recipe.ingredient_8) { %>
+                <p><strong>8. </strong><%= recipe.ingredient_8_quantity %> <%= recipe.ingredient_8_measurement %>  <%= recipe.ingredient_8 %></p>
+            <% } %>
+            <% if(recipe.ingredient_9) { %>
+                <p><strong>9. </strong><%= recipe.ingredient_9_quantity %> <%= recipe.ingredient_9_measurement %>  <%= recipe.ingredient_9 %></p>
+            <% } %>
+            <% if(recipe.ingredient_10) { %>
+                <p><strong>10. </strong><%= recipe.ingredient_10_quantity %> <%= recipe.ingredient_10_measurement %>  <%= recipe.ingredient_10 %></p>
+            <% } %>
+            <% if(recipe.ingredient_11) { %>
+                <p><strong>11. </strong><%= recipe.ingredient_11_quantity %> <%= recipe.ingredient_11_measurement %>  <%= recipe.ingredient_11 %></p>
+            <% } %>
+            <% if(recipe.ingredient_12) { %>
+                <p><strong>12. </strong><%= recipe.ingredient_12_quantity %> <%= recipe.ingredient_12_measurement %>  <%= recipe.ingredient_12 %></p>
+            <% } %>
+            <% if(recipe.ingredient_13) { %>
+                <p><strong>13. </strong><%= recipe.ingredient_13_quantity %> <%= recipe.ingredient_13_measurement %>  <%= recipe.ingredient_13 %></p>
+            <% } %>
+            <% if(recipe.ingredient_14) { %>
+                <p><strong>14. </strong><%= recipe.ingredient_14_quantity %> <%= recipe.ingredient_14_measurement %>  <%= recipe.ingredient_14 %></p>
+            <% } %>
+            <% if(recipe.ingredient_15) { %>
+                <p><strong>15. </strong><%= recipe.ingredient_15_quantity %> <%= recipe.ingredient_15_measurement %>  <%= recipe.ingredient_15 %></p>
+            <% } %>
+        </div>
+        <div class="content is-medium py-4">
+            <h1 class="title is-1">Instructions</h1>
+            <% if(recipe.instruction_1_description) { %>
+                <p><strong>1. </strong><%= recipe.instruction_1_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_2_description) { %>
+                <p><strong>2. </strong><%= recipe.instruction_2_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_3_description) { %>
+                <p><strong>3. </strong><%= recipe.instruction_3_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_4_description) { %>
+                <p><strong>4. </strong><%= recipe.instruction_4_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_5_description) { %>
+                <p><strong>5. </strong><%= recipe.instruction_5_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_6_description) { %>
+                <p><strong>6. </strong><%= recipe.instruction_6_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_7_description) { %>
+                <p><strong>7. </strong><%= recipe.instruction_7_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_8_description) { %>
+                <p><strong>8. </strong><%= recipe.instruction_8_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_9_description) { %>
+                <p><strong>9. </strong><%= recipe.instruction_9_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_10_description) { %>
+                <p><strong>10. </strong><%= recipe.instruction_10_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_11_description) { %>
+                <p><strong>11. </strong><%= recipe.instruction_11_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_12_description) { %>
+                <p><strong>12. </strong><%= recipe.instruction_12_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_13_description) { %>
+                <p><strong>13. </strong><%= recipe.instruction_13_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_14_description) { %>
+                <p><strong>14. </strong><%= recipe.instruction_14_description %> </p>
+            <% } %>
+            <% if(recipe.instruction_15_description) { %>
+                <p><strong>15. </strong><%= recipe.instruction_15_description %> </p>
+            <% } %>
+        </div>
+        <div class="content is-medium py-4">
+            <h1 class="title is-1">Notes</h1>
+            <p><%= recipe.notes %> </p>
+        </div>
+        <div class="content is-medium py-4">
+            <div class="level-right">
+                <div class="buttons">
+                    <form action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
+                        <input class="button is-danger is-light mr-3" type="submit" value="Delete">
+                    </form>
+                    <a href="/recipes/<%= recipe.id %>/edit" class="button is-primary">Edit</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 <%- include('./partials/footer.ejs') %>

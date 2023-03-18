@@ -1,7 +1,5 @@
 <%- include('./partials/header.ejs') %>
-<body>
     <form action="/recipes" method="POST">
-        <nav class="navbar is-fixed-top py-3" role="navigation" aria-label="main navigation">
             <div class="container">
                 <div class="navbar-start">
                     <h1 class="title is-2">New Recipe</h1>
@@ -10,8 +8,7 @@
                  <input input class="button" type="submit" value="Add Recipe">
                 </div>
             </div>
-        </nav>
-        <div class="container py-5" style="margin-top: 100px;">
+        <div class="container" style="margin-top: 100px;">
             <div class="field">
                 <label class="label" class="label" for="name">Name</label>
                 <div class="control">
@@ -25,32 +22,32 @@
 
             <div class="field">
                 <div class="control">
-                    <label class="checkbox" for="breakfast">
-                        <input type="checkbox" name="course" id="breakfast">
+                    <label class="radio" for="breakfast">
+                        <input type="radio" name="course" id="breakfast" value="Breakfast">
                         Breakfast
                     </label>
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    <label class="checkbox" for="lunch">
-                        <input type="checkbox" name="course" id="lunch">
+                    <label class="radio" for="lunch">
+                        <input type="radio" name="course" id="lunch" value="Lunch">
                         Lunch
                     </label>
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    <label class="checkbox" for="dinner">
-                        <input type="checkbox" name="course" id="dinner">
+                    <label class="radio" for="dinner">
+                        <input type="radio" name="course" id="dinner" value="Dinner">
                         Dinner
                     </label>
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                    <label class="checkbox" for="snack">
-                        <input type="checkbox" name="course" id="snack">
+                    <label class="radio" for="snack">
+                        <input type="radio" name="course" id="snack" value="Snack">
                         Snack
                     </label>
                 </div>
@@ -115,15 +112,15 @@
                     <div class="field">
                         <label class="label" for="ingredient_quantity_1">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_1" id="ingredient_quantity_1" >
+                            <input class="input" type="number" name="ingredient_1_quantity" id="ingredient_1_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_1">Measurement</label>
+                        <label class="label" for="ingredient_1_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_1" id="ingredient_unit_of_measurement_1" >
+                            <input class="input" type="text" name="ingredient_1_measurement" id="ingredient_1_measurement" >
                         </div>
                     </div>
                 </div>
@@ -140,17 +137,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_2">Quantity</label>
+                        <label class="label" for="ingredient_2_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_2" id="ingredient_quantity_2" >
+                            <input class="input" type="number" name="ingredient_2_quantity" id="ingredient_2_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_2">Measurement</label>
+                        <label class="label" for="ingredient_2_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_2" id="ingredient_unit_of_measurement_2" >
+                            <input class="input" type="text" name="ingredient_2_measurement" id="ingredient_2_measurement" >
                         </div>
                     </div>
                 </div>
@@ -167,17 +164,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_3">Quantity</label>
+                        <label class="label" for="ingredient_3_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_3" id="ingredient_quantity_3" >
+                            <input class="input" type="number" name="ingredient_3_quantity" id="ingredient_3_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_3">Measurement</label>
+                        <label class="label" for="ingredient_3_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_3" id="ingredient_unit_of_measurement_3" >
+                            <input class="input" type="text" name="ingredient_3_measurement" id="ingredient_3_measurement" >
                         </div>
                     </div>
                 </div>
@@ -194,17 +191,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_4">Quantity</label>
+                        <label class="label" for="ingredient_4_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_4" id="ingredient_quantity_4" >
+                            <input class="input" type="number" name="ingredient_4_quantity" id="ingredient_4_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_4">Measurement</label>
+                        <label class="label" for="ingredient_4_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_4" id="ingredient_unit_of_measurement_4" >
+                            <input class="input" type="text" name="ingredient_4_measurement" id="ingredient_4_measurement" >
                         </div>
                     </div>
                 </div>
@@ -221,17 +218,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_5">Quantity</label>
+                        <label class="label" for="ingredient_5_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_5" id="ingredient_quantity_5" >
+                            <input class="input" type="number" name="ingredient_5_quantity" id="ingredient_5_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_5">Measurement</label>
+                        <label class="label" for="ingredient_5_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_5" id="ingredient_unit_of_measurement_5" >
+                            <input class="input" type="text" name="ingredient_5_measurement" id="ingredient_5_measurement" >
                         </div>
                     </div>
                 </div>
@@ -248,17 +245,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_6">Quantity</label>
+                        <label class="label" for="ingredient_6_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_6" id="ingredient_quantity_6" >
+                            <input class="input" type="number" name="ingredient_6_quantity" id="ingredient_6_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_6">Measurement</label>
+                        <label class="label" for="ingredient_6_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_6" id="ingredient_unit_of_measurement_6" >
+                            <input class="input" type="text" name="ingredient_6_measurement" id="ingredient_6_measurement" >
                         </div>
                     </div>
                 </div>
@@ -275,17 +272,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_7">Quantity</label>
+                        <label class="label" for="ingredient_7_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_7" id="ingredient_quantity_7" >
+                            <input class="input" type="number" name="ingredient_7_quantity" id="ingredient_7_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_7">Measurement</label>
+                        <label class="label" for="ingredient_7_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_7" id="ingredient_unit_of_measurement_7" >
+                            <input class="input" type="text" name="ingredient_7_measurement" id="ingredient_7_measurement" >
                         </div>
                     </div>
                 </div>
@@ -302,17 +299,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_8">Quantity</label>
+                        <label class="label" for="ingredient_8_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_8" id="ingredient_quantity_8" >
+                            <input class="input" type="number" name="ingredient_8_quantity" id="ingredient_8_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_8">Measurement</label>
+                        <label class="label" for="ingredient_8_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_8" id="ingredient_unit_of_measurement_8" >
+                            <input class="input" type="text" name="ingredient_8_measurement" id="ingredient_8_measurement" >
                         </div>
                     </div>
                 </div>
@@ -329,17 +326,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_9">Quantity</label>
+                        <label class="label" for="ingredient_9_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_9" id="ingredient_quantity_9" >
+                            <input class="input" type="number" name="ingredient_9_quantity" id="ingredient_9_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_9">Measurement</label>
+                        <label class="label" for="ingredient_9_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_9" id="ingredient_unit_of_measurement_9" >
+                            <input class="input" type="text" name="ingredient_9_measurement" id="ingredient_9_measurement" >
                         </div>
                     </div>
                 </div>
@@ -356,17 +353,17 @@
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_quantity_10">Quantity</label>
+                        <label class="label" for="ingredient_10_quantity">Quantity</label>
                         <div class="control">
-                            <input class="input" type="number" name="ingredient_quantity_10" id="ingredient_quantity_10" >
+                            <input class="input" type="number" name="ingredient_10_quantity" id="ingredient_10_quantity" >
                         </div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="field">
-                        <label class="label" for="ingredient_unit_of_measurement_10">Measurement</label>
+                        <label class="label" for="ingredient_10_measurement">Measurement</label>
                         <div class="control">
-                            <input class="input" type="text" name="ingredient_unit_of_measurement_10" id="ingredient_unit_of_measurement_10" >
+                            <input class="input" type="text" name="ingredient_10_measurement" id="ingredient_10_measurement" >
                         </div>
                     </div>
                 </div>
@@ -377,12 +374,6 @@
 
             <h1 class="title is-4">Instruction 1</h1>
             <div class="field">
-                <label class="label" for="instruction_1_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_1_name" id="instruction_1_name">
-                </div>
-            </div>
-            <div class="field">
                 <label class="label" for="instruction_1_description">Description</label>
                 <div class="control">
                     <textarea class="textarea" name="instruction_1_description" id="instruction_1_description"></textarea>
@@ -390,12 +381,6 @@
             </div>
 
             <h1 class="title is-4">Instruction 2</h1>
-            <div class="field">
-                <label class="label" for="instruction_2_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_2_name" id="instruction_2_name">
-                </div>
-            </div>
             <div class="field">
                 <label class="label" for="instruction_2_description">Description</label>
                 <div class="control">
@@ -405,12 +390,6 @@
 
             <h1 class="title is-4">Instruction 3</h1>
             <div class="field">
-                <label class="label" for="instruction_3_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_3_name" id="instruction_3_name">
-                </div>
-            </div>
-            <div class="field">
                 <label class="label" for="instruction_3_description">Description</label>
                 <div class="control">
                     <textarea class="textarea" name="instruction_3_description" id="instruction_3_description"></textarea>
@@ -418,12 +397,6 @@
             </div>
 
             <h1 class="title is-4">Instruction 4</h1>
-            <div class="field">
-                <label class="label" for="instruction_4_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_4_name" id="instruction_4_name">
-                </div>
-            </div>
             <div class="field">
                 <label class="label" for="instruction_4_description">Description</label>
                 <div class="control">
@@ -433,12 +406,6 @@
 
             <h1 class="title is-4">Instruction 5</h1>
             <div class="field">
-                <label class="label" for="instruction_5_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_5_name" id="instruction_5_name">
-                </div>
-            </div>
-            <div class="field">
                 <label class="label" for="instruction_5_description">Description</label>
                 <div class="control">
                     <textarea class="textarea" name="instruction_5_description" id="instruction_5_description"></textarea>
@@ -446,12 +413,6 @@
             </div>
 
             <h1 class="title is-4">Instruction 6</h1>
-            <div class="field">
-                <label class="label" for="instruction_6_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_6_name" id="instruction_6_name">
-                </div>
-            </div>
             <div class="field">
                 <label class="label" for="instruction_6_description">Description</label>
                 <div class="control">
@@ -461,12 +422,6 @@
 
             <h1 class="title is-4">Instruction 7</h1>
             <div class="field">
-                <label class="label" for="instruction_7_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_7_name" id="instruction_7_name">
-                </div>
-            </div>
-            <div class="field">
                 <label class="label" for="instruction_7_description">Description</label>
                 <div class="control">
                     <textarea class="textarea" name="instruction_7_description" id="instruction_7_description"></textarea>
@@ -474,12 +429,6 @@
             </div>
 
             <h1 class="title is-4">Instruction 8</h1>
-            <div class="field">
-                <label class="label" for="instruction_8_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_8_name" id="instruction_8_name">
-                </div>
-            </div>
             <div class="field">
                 <label class="label" for="instruction_8_description">Description</label>
                 <div class="control">
@@ -489,12 +438,6 @@
 
             <h1 class="title is-4">Instruction 9</h1>
             <div class="field">
-                <label class="label" for="instruction_9_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_9_name" id="instruction_9_name">
-                </div>
-            </div>
-            <div class="field">
                 <label class="label" for="instruction_9_description">Description</label>
                 <div class="control">
                     <textarea class="textarea" name="instruction_9_description" id="instruction_9_description"></textarea>
@@ -502,12 +445,6 @@
             </div>
 
             <h1 class="title is-4">Instruction 10</h1>
-            <div class="field">
-                <label class="label" for="instruction_10_name">Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="instruction_10_name" id="instruction_10_name">
-                </div>
-            </div>
             <div class="field">
                 <label class="label" for="instruction_10_description">Description</label>
                 <div class="control">
